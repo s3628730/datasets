@@ -9,6 +9,8 @@ The conventions with the datasets are as follows:
 6. Any row ID-like columns have been removed.
 7. Watch out for any possible missing values in the descriptive features.
 
+A sample Python script named **"prepare_dataset_for_modeling.py"** has also been included for loading these datasets and preparing them for model fitting.
+
 ####################################################
 
 ## arrhythmia.csv
