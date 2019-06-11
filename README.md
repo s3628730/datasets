@@ -5,10 +5,9 @@ The conventions with the datasets are as follows:
 2. All datasets have header rows.
 3. The target variable is always the last column.
 4. All numeric nominal features have been encoded as strings.
-5. All ordinal features have been encoded as integers.
-6. Any constant columns have been removed. 
-7. Any row ID-like columns have been removed.
-8. Watch out for any possible missing values in the descriptive features.
+5. Any constant columns have been removed. 
+6. Any row ID-like columns have been removed.
+7. Watch out for any possible missing values in the descriptive features.
 
 ####################################################
 
