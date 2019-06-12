@@ -59,7 +59,7 @@ def prepare_dataset_for_modeling(dataset_name, n_obs=-1):
     # label-encode y
     y = preprocessing.LabelEncoder().fit_transform(y)
     # shuffle data at the end
-    x, y = shuffle(x, y)
+    x, y = shuffle(x, y, random_state=321)
 
     return x, y
 
