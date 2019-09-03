@@ -7,11 +7,11 @@ from sklearn import preprocessing
 from sklearn.utils import shuffle
 
 
-def prepare_dataset_for_modeling(dataset_name, n_obs=-1, random_seed=999, drop_const_columns=True):
+def prepare_dataset_for_modeling(dataset_name, n_obs=-1, random_state=999, drop_const_columns=True):
     """
     :param dataset_name: name of dataset to be read from github
     :param n_obs: how many observations to sample (if > 0)
-    :param random_seed: seed for sampling observations
+    :param random_state: seed for sampling observations
     :param drop_const_columns: drop constant-value columns (after any sampling) (if True)
     :return: x and y NumPy arrays ready for model fitting
     """
@@ -29,7 +29,7 @@ def prepare_dataset_for_modeling(dataset_name, n_obs=-1, random_seed=999, drop_c
 
     # sample a smaller subset if n_obs > 0
     if n_obs > 0:
-        df = df.sample(n=n_obs, replace=False, random_state=random_seed)
+        df = df.sample(n=n_obs, replace=False, random_state=random_state)
 
     # if needed, you can drop unique-value columns as below
     # ### df = df.loc[:, df.nunique() < df.shape[0]]
