@@ -12,7 +12,7 @@ def prepare_dataset_for_modeling(dataset_name, n_obs=-1, random_seed=999, drop_c
     :param dataset_name: name of dataset to be read from github
     :param n_obs: how many observations to sample (if > 0)
     :param random_seed: seed for sampling observations
-    :param drop_unique_value_columns: drop ID-like columns (if True)
+    :param drop_const_columns: drop constant-value columns (after any sampling) (if True)
     :return: x and y NumPy arrays ready for model fitting
     """
 
