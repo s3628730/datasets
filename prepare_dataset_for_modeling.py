@@ -7,7 +7,7 @@ from sklearn import preprocessing
 from sklearn.utils import shuffle
 
 
-def prepare_dataset_for_modeling(dataset_name, n_obs=-1, random_seed=123, drop_unique_value_columns=False):
+def prepare_dataset_for_modeling(dataset_name, n_obs=-1, random_seed=999, drop_const_columns=True):
     """
     :param dataset_name: name of dataset to be read from github
     :param n_obs: how many observations to sample (if > 0)
@@ -31,13 +31,12 @@ def prepare_dataset_for_modeling(dataset_name, n_obs=-1, random_seed=123, drop_u
     if n_obs > 0:
         df = df.sample(n=n_obs, replace=False, random_state=random_seed)
 
+    # if needed, you can drop unique-value columns as below
+    # ### df = df.loc[:, df.nunique() < df.shape[0]]
     
-    if drop_unique_value_columns:
-    	# drop ID-like columns
-    	df = df.loc[:, df.nunique() < df.shape[0]]
-    
-    # drop constant columns
-    df = df.loc[:, df.nunique() > 1]
+   if drop_const_columns:
+        # drop constant columns
+        df = df.loc[:, df.nunique() > 1]
 
     # last column is y (target feature)
     y = df.iloc[:, -1]
